@@ -3,7 +3,7 @@ const char MAIN_page[] PROGMEM = R"=====(
 <html>
 
 <head>
-  <title>Lightning Protection Switch</title>
+  <title>ESP8266 Relay Board</title>
   <script>
     var State1;
     var State2;
@@ -13,6 +13,14 @@ const char MAIN_page[] PROGMEM = R"=====(
     var State6;
     var State7;
     var State8;
+    var State9;
+    var State10;
+    var State11;
+    var State12;
+    var State13;
+    var State14;
+    var State15;
+    var State16;
     function DisplayCurrentTime() {
       var dt = new Date();
       var weekday = new Array(7);
@@ -39,62 +47,126 @@ const char MAIN_page[] PROGMEM = R"=====(
           State6 = this.responseXML.getElementsByTagName("analog")[5].childNodes[0].nodeValue;
           State7 = this.responseXML.getElementsByTagName("analog")[6].childNodes[0].nodeValue;
           State8 = this.responseXML.getElementsByTagName("analog")[7].childNodes[0].nodeValue;
+          State9 = this.responseXML.getElementsByTagName("analog")[8].childNodes[0].nodeValue;
+          State10 = this.responseXML.getElementsByTagName("analog")[9].childNodes[0].nodeValue;
+          State11 = this.responseXML.getElementsByTagName("analog")[10].childNodes[0].nodeValue;
+          State12 = this.responseXML.getElementsByTagName("analog")[11].childNodes[0].nodeValue;
+          State13 = this.responseXML.getElementsByTagName("analog")[12].childNodes[0].nodeValue;
+          State14 = this.responseXML.getElementsByTagName("analog")[13].childNodes[0].nodeValue;
+          State15 = this.responseXML.getElementsByTagName("analog")[14].childNodes[0].nodeValue;
+          State16 = this.responseXML.getElementsByTagName("analog")[15].childNodes[0].nodeValue;
         }
         if (State1 != 0) {
-          var codeBlock1 = '<button type="submit" class="button-on">Tower 1 Open</button>';
+          var codeBlock1 = '<button type="submit" class="button-on">Relay 1 On</button>';
           document.getElementById("statled1").innerHTML = codeBlock1;
         } else {
-          var codeBlock1 = '<button type="submit" class="button-off">Tower 1 Short</button>';
+          var codeBlock1 = '<button type="submit" class="button-off">Relay 1 Off</button>';
           document.getElementById("statled1").innerHTML = codeBlock1;
         }
         if (State2 != 0) {
-          var codeBlock2 = '<button type="submit" class="button-on">Tower 2 Open</button>';
+          var codeBlock2 = '<button type="submit" class="button-on">Relay 2 On</button>';
           document.getElementById("statled2").innerHTML = codeBlock2;
         } else {
-          var codeBlock2 = '<button type="submit" class="button-off">Tower 2 Short</button>';
+          var codeBlock2 = '<button type="submit" class="button-off">Relay 2 Off</button>';
           document.getElementById("statled2").innerHTML = codeBlock2;
         }
         if (State3 != 0) {
-          var codeBlock3 = '<button type="submit" class="button-on-latch">Ant SW Closing</button>';
+          var codeBlock3 = '<button type="submit" class="button-on">Relay 3 On</button>';
           document.getElementById("statled3").innerHTML = codeBlock3;
         } else {
-          var codeBlock3 = '<button type="submit" class="button-off">Ant SW Closed</button>';
+          var codeBlock3 = '<button type="submit" class="button-off">Relay 3 Off</button>';
           document.getElementById("statled3").innerHTML = codeBlock3;
         }
         if (State4 != 0) {
-          var codeBlock4 = '<button type="submit" class="button-on-latch">Ant SW Separating</button>';
+          var codeBlock4 = '<button type="submit" class="button-on">Relay 4 On</button>';
           document.getElementById("statled4").innerHTML = codeBlock4;
         } else {
-          var codeBlock4 = '<button type="submit" class="button-off">Ant SW Separated</button>';
+          var codeBlock4 = '<button type="submit" class="button-off">Relay 4 Off</button>';
           document.getElementById("statled4").innerHTML = codeBlock4;
         }
         if (State5 != 0) {
-          var codeBlock5 = '<button type="submit" class="button-on">630M Transverter On</button>';
+          var codeBlock5 = '<button type="submit" class="button-on">Relay 5 On</button>';
           document.getElementById("statled5").innerHTML = codeBlock5;
         } else {
-          var codeBlock5 = '<button type="submit" class="button-off">630M Transverter Off</button>';
+          var codeBlock5 = '<button type="submit" class="button-off">Relay 5 Off</button>';
           document.getElementById("statled5").innerHTML = codeBlock5;
         }
         if (State6 != 0) {
-          var codeBlock6 = '<button type="submit" class="button-on">2200M Transverter On</button>';
+          var codeBlock6 = '<button type="submit" class="button-on">Relay 6 Off</button>';
           document.getElementById("statled6").innerHTML = codeBlock6;
         } else {
-          var codeBlock6 = '<button type="submit" class="button-off">2200M Transverter Off</button>';
+          var codeBlock6 = '<button type="submit" class="button-off">Relay 6 Off</button>';
           document.getElementById("statled6").innerHTML = codeBlock6;
         }
         if (State7 != 0) {
-          var codeBlock7 = '<button type="submit" class="button-on">Tuner Frequency Up On</button>';
+          var codeBlock7 = '<button type="submit" class="button-on">Relay 7 On</button>';
           document.getElementById("statled7").innerHTML = codeBlock7;
         } else {
-          var codeBlock7 = '<button type="submit" class="button-off">Tuner Frequency Up Off</button>';
+          var codeBlock7 = '<button type="submit" class="button-off">Relay 7 Off</button>';
           document.getElementById("statled7").innerHTML = codeBlock7;
         }
         if (State8 != 0) {
-          var codeBlock8 = '<button type="submit" class="button-on">Tuner Frequency Down On</button>';
+          var codeBlock8 = '<button type="submit" class="button-on">Relay 8 On</button>';
           document.getElementById("statled8").innerHTML = codeBlock8;
         } else {
-          var codeBlock8 = '<button type="submit" class="button-off">Tuner Frequency Down Off</button>';
+          var codeBlock8 = '<button type="submit" class="button-off">Relay 8 Off</button>';
           document.getElementById("statled8").innerHTML = codeBlock8;
+        }
+        if (State9 != 0) {
+          var codeBlock9 = '<button type="submit" class="button-on">Relay 9 On</button>';
+          document.getElementById("statled9").innerHTML = codeBlock9;
+        } else {
+          var codeBlock9 = '<button type="submit" class="button-off">Relay 9 Off</button>';
+          document.getElementById("statled9").innerHTML = codeBlock9;
+        }
+        if (State10 != 0) {
+          var codeBlock10 = '<button type="submit" class="button-on">Relay 10 On</button>';
+          document.getElementById("statled10").innerHTML = codeBlock10;
+        } else {
+          var codeBlock10 = '<button type="submit" class="button-off">Relay 10 Off</button>';
+          document.getElementById("statled10").innerHTML = codeBlock10;
+        }
+        if (State11 != 0) {
+          var codeBlock11 = '<button type="submit" class="button-on">Relay 11 On</button>';
+          document.getElementById("statled11").innerHTML = codeBlock11;
+        } else {
+          var codeBlock11 = '<button type="submit" class="button-off">Relay 11 Off</button>';
+          document.getElementById("statled11").innerHTML = codeBlock11;
+        }
+        if (State12 != 0) {
+          var codeBlock12 = '<button type="submit" class="button-on">Relay 12 On</button>';
+          document.getElementById("statled12").innerHTML = codeBlock12;
+        } else {
+          var codeBlock12 = '<button type="submit" class="button-off">Relay 12 Off</button>';
+          document.getElementById("statled12").innerHTML = codeBlock12;
+        }
+        if (State13 != 0) {
+          var codeBlock13 = '<button type="submit" class="button-on">Relay 13 On</button>';
+          document.getElementById("statled13").innerHTML = codeBlock13;
+        } else {
+          var codeBlock13 = '<button type="submit" class="button-off">Relay 13 Off</button>';
+          document.getElementById("statled13").innerHTML = codeBlock13;
+        }
+        if (State14 != 0) {
+          var codeBlock14 = '<button type="submit" class="button-on">Relay 14 On</button>';
+          document.getElementById("statled14").innerHTML = codeBlock14;
+        } else {
+          var codeBlock14 = '<button type="submit" class="button-off">Relay 14 Off</button>';
+          document.getElementById("statled14").innerHTML = codeBlock14;
+        }
+        if (State15 != 0) {
+          var codeBlock15 = '<button type="submit" class="button-on">Relay 15 On</button>';
+          document.getElementById("statled15").innerHTML = codeBlock15;
+        } else {
+          var codeBlock15 = '<button type="submit" class="button-off">Relay 15 Off</button>';
+          document.getElementById("statled15").innerHTML = codeBlock15;
+        }
+        if (State16 != 0) {
+          var codeBlock16 = '<button type="submit" class="button-on">Relay 16 On</button>';
+          document.getElementById("statled16").innerHTML = codeBlock16;
+        } else {
+          var codeBlock16 = '<button type="submit" class="button-off">Relay 16 Off</button>';
+          document.getElementById("statled16").innerHTML = codeBlock16;
         }
       }
       xhttp.open("GET", "redstate", true);
@@ -344,7 +416,7 @@ const char MAIN_page[] PROGMEM = R"=====(
 <body>
   <table>
     <tr>
-      <td>
+      <td style='width:40%'>
         <form action="/LED1" method="POST">
           <span id="statled1"></span>
         </form>
@@ -368,7 +440,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       </td>
     </tr>
     <tr>
-      <td>
+      <td style='width:40%'>
         <form action="/LED5" method="POST">
           <span id="statled5"></span>
         </form>
@@ -393,59 +465,69 @@ const char MAIN_page[] PROGMEM = R"=====(
     </tr>
     <tr>
       <td style='width:40%'>
-        <!--
-  <form action="/allon" method="POST">
-      <button type="submit" class="button">All Relay ON</button>
-  </form></td>
-  -->
+        <form action="/LED9" method="POST">
+          <span id="statled9"></span>
+        </form>
+      </td>
+      <td style='width:40%'>
+        <form action="/LED10" method="POST">
+          <span id="statled10"></span>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td style='width:40%'>
+        <form action="/LED11" method="POST">
+          <span id="statled11"></span>
+        </form>
+      </td>
+      <td style='width:40%'>
+        <form action="/LED12" method="POST">
+          <span id="statled12"></span>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td style='width:40%'>
+        <form action="/LED13" method="POST">
+          <span id="statled13"></span>
+        </form>
+      </td>
+      <td style='width:40%'>
+        <form action="/LED14" method="POST">
+          <span id="statled14"></span>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td style='width:40%'>
+        <form action="/LED15" method="POST">
+          <span id="statled15"></span>
+        </form>
+      </td>
+      <td style='width:40%'>
+        <form action="/LED16" method="POST">
+          <span id="statled16"></span>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td style='width:40%'>
         <form action="/" method="POST">
           <button type="submit" class="button-home">Home</button>
         </form>
       </td>
       <td style='width:40%'>
         <form action="/alloff" method="POST">
-          <button type="submit" class="button">All Relay OFF</button>
+          <button type="submit" class="button">All Relays OFF</button>
         </form>
       </td>
     </tr>
-  </table>
-  <table>
     <tr>
-      <td style='width:30%'>
-        <div class="slidecontainer">
-          <button onclick="document.getElementById('id01').style.display='block'" class="button"
-            style="width:90%">Connect to Wi-Fi</button>
-        </div>
-        <div id="id01" class="modal">
-          <form class="modal-content animate" action="/Mywifi" method="POST">
-            <div class="data-input">
-              <div class="slidecontainer">
-                <label for="usname"><b>Wifi Ssid</b></label>
-                <input type="text" placeholder="Enter Ssid" name="usname" required>
-                <label for="pssw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="pssw">
-                <button type="submit" class="button"><b>Connect</b></button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <script>
-          // Get the modal
-          var modal = document.getElementById('id01');
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function (event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          }
-        </script>
-      </td>
       <td style='width:40%'>
         <b class="dtime"><span id="datetime"></span></b>
       </td>
-      <td style='width:30%'>
+      <td style='width:40%'>
         <form action="/restesp" method="POST">
           <button type="submit" name="rerset" class="button">Restart ESP</button>
         </form>

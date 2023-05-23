@@ -18,18 +18,20 @@ ESP8266WebServer server(80);
 #define SKIP_DELAY 0  // set to 1 to skip startup delay
 #define IS_RELAY_BOARD 1  // set to 1 for actual relay PCB
 
-IPAddress ip(192, 168, 97, 62);
-IPAddress dns(192, 168, 97, 1);
-IPAddress gateway(192, 168, 97, 1);
-IPAddress subnet(255, 255, 255, 0);
 
+//***************************************************
 // Master Branch
+//***************************************************
 
 //***************************************************
 // Create a credentials.h with the following defined
 // #once
 // char ssid[30] = "";
 // char pass[30] = "";
+// IPAddress ip(192, 168, 97, 62);
+// IPAddress dns(192, 168, 97, 1);
+// IPAddress gateway(192, 168, 97, 1);
+// IPAddress subnet(255, 255, 255, 0);
 //***************************************************
 
 #define DELAY_MS 10
